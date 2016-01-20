@@ -1,0 +1,19 @@
+<h1>Listing essays</h1>
+ 
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Author</th>
+    <th>Text</th>
+  </tr>
+ 
+  <% @essays.each do |essay| %>
+    <tr>
+      <td><%= essay.title %></td>
+      <td><%= essay.author %></td>
+      <td><%= essay.text %></td>
+      <td><%= link_to 'Show', essay_path(essay) %></td>
+      <td><%= link_to 'Edit', edit_essay_path(essay) %></td>
+    </tr>
+  <% end %>
+</table>
