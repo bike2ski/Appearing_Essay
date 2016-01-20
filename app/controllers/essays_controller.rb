@@ -36,6 +36,13 @@ class EssaysController < ApplicationController
 		end
 	end
 
+	def destroy
+		@essay = Essay.find(params[:id])
+		@essay.destroy
+
+		redirect_to essays_path
+	end
+
 	private
 		def essay_params
 			params.require(:essay).permit(:title, :author, :text)
